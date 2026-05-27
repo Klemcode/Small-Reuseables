@@ -71,18 +71,20 @@ const App = () => {
     </div>
 
     <div className="d-flex justify-content-center gap-2 mb-4">
-      <button
-        className="btn btn-success"
-        onClick={increaseScore}
-      >
-        + Increase
-      </button>
+    
 
       <button
         className="btn btn-danger"
         onClick={decreaseScore}
       >
         - Decrease
+      </button>
+
+        <button
+        className="btn btn-success"
+        onClick={increaseScore}
+      >
+        + Increase
       </button>
     </div>
 
