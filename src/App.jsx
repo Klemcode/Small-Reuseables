@@ -60,24 +60,51 @@ const App = () => {
           element={
             <>
 
-              <p>App power: {Score}</p>
+             <div className="card shadow-sm p-4 mx-auto" style={{ maxWidth: "400px" }}>
+  <div className="card-body text-center">
+    
+    <h2 className="card-title mb-4">⚡ Power Dashboard</h2>
 
-              <button onClick={increaseScore}>
-                Increase Power
-              </button>
+    <div className="mb-4">
+      <h5 className="text-muted">App Power</h5>
+      <h1 className="display-4 fw-bold">{Score}</h1>
+    </div>
 
-              <button onClick={decreaseScore}>
-                Decrease Power
-              </button>
+    <div className="d-flex justify-content-center gap-2 mb-4">
+      <button
+        className="btn btn-success"
+        onClick={increaseScore}
+      >
+        + Increase
+      </button>
 
+      <button
+        className="btn btn-danger"
+        onClick={decreaseScore}
+      >
+        - Decrease
+      </button>
+    </div>
 
-              <p>
-                Who are you? I am {Parada}
-              </p>
+    <hr />
 
-              <button onClick={firstParada}>
-                Show Name
-              </button>
+    <div className="mt-3">
+      <h5 className="text-muted">Who are you?</h5>
+
+      <p className="fs-4 fw-semibold">
+        {Parada || "Click the button below"}
+      </p>
+
+      <button
+        className="btn btn-primary"
+        onClick={firstParada}
+      >
+        Show Name
+      </button>
+    </div>
+
+  </div>
+</div>
 
 
               <Login />

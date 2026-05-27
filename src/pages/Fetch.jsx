@@ -14,7 +14,7 @@ useEffect(() => {
     //    console.log(response);
        
        let data = await response.json()
-       console.log(data);
+    //    console.log(data);
        setusers(data)
        
     }
