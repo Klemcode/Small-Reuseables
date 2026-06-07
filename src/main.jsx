@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import appReducer from './Redux/AppSlice.js';
+import appReducer from './Redux/appSlice.js';
 
 export const store = configureStore({
   reducer: {
