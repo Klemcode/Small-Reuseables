@@ -49,6 +49,13 @@ const Layout = () => {
             Fetch
           </Link>
 
+          <Link
+            to="/employee/contact"
+            className='text-white text-decoration-none'
+          >
+            state mgt
+          </Link>
+
         </div>
 
       </div>

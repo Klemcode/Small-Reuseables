@@ -12,6 +12,8 @@ import UserProfile from './pages/UserProfile'
 import Settings from './pages/settings'
 import Effect from './pages/Effect'
 import Fetch from './pages/Fetch'
+import Formik from './pages/Formik'
+import Contact from './pages/Contact'
 
 const App = () => {
 
@@ -141,13 +143,17 @@ const App = () => {
         <Route path="/Notfound" element={<Notfound />} />
          <Route path="*" element={<Navigate to={"/Notfound"}/>}/>
         <Route path='/profile/:user' element={<Profile/>}/>
+        <Route path='/formik' element={<Formik/>}/>
+         <Route path='/contact' element={<Contact/>}/>
 
-          
+
+      
  <Route path="/employee" element={<Layout />}>
   <Route path="/employee/dashboard" element={<Dashboard />} />
   <Route path="/employee/profile" element={<UserProfile />} />
    <Route path="/employee/settings" element={<Settings />} />
     <Route path="/employee/fetch" element={<Fetch />} />
+    <Route path="/employee/contact" element={<Contact />} />
 </Route>
 
       </Routes>

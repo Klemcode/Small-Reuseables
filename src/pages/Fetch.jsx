@@ -1,21 +1,40 @@
-import React, { useEffect, useState } from 'react'
-
+import React, { useEffect, useState} from 'react'
+import axios from "axios";
 const Fetch = () => {
 
 let url= import.meta.env.VITE_BASE_URL
 
 // console.log(url);
 const [users, setusers] = useState([])
+const [loading, setloading] = useState(true)
 
 useEffect(() => {
     
     const makeRequest= async () => {
-       let response= await fetch (`${url}/users`) 
-    //    console.log(response);
+    //    let response= await fetch (`${url}/users`) 
+    // //    console.log(response);
        
-       let data = await response.json()
-    //    console.log(data);
-       setusers(data)
+    //    let data = await response.json()
+    // //    console.log(data);
+try {
+
+    let response= await axios.get(`${url}/users`)
+    console.log(response);
+    console.log(response.data);
+    
+    setusers(response.data)
+    setloading(false)
+    
+    
+} catch (error) {
+    console.log(error);
+    alert("Wahala wa I cant fetch users")
+    setloading(false)
+    
+}
+
+
+    //    setusers(data)
        
     }
     makeRequest()
@@ -30,7 +49,10 @@ useEffect(() => {
 
 {
 <div className="d-flex gap-3 flex-wrap">
-  {users.map((arr) => (
+ 
+  { loading ? (<div className="spinner-grow text-primary" role="status">
+  <span className="visually-hidden" >Loading...</span>
+</div>) : (users.map((arr) => (
     <div
       key={arr.id}
       className="card"
@@ -55,7 +77,7 @@ useEffect(() => {
           {arr.username}
         </a>
       </div>
-    </div>
+    </div>)
   ))}
 </div>
 
