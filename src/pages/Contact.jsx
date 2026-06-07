@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addFriend, decreaseCount, increaseCount, increaseCountByFive, increaseCountByNum, removeFriend, editFriend } from "../Redux/appSlice";
+import { addFriend, decreaseCount, increaseCount, increaseCountByFive, increaseCountByNum, removeFriend, editFriend } from "../Redux/AppSlice";
 
 
 const Contact = () => {
